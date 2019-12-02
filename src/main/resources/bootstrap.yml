@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: turbine-1
+  cloud:
+    config:
+      enabled: true
+      discovery:
+        enabled: true
+        service-id: SPRING-CLOUD-CONFIG
+      fail-fast: true
+      label: master
+
+server:
+  port: 10989
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://10.10.6.93:8761/eureka/
+#      defaultZone: http://10.10.7.67:8761/eureka/
+    #      defaultZone: http://zjs:zjsmicro@10.10.131.64:8761/eureka/,http://zjs:zjsmicro@10.10.131.65:8761/eureka/,http://zjs:zjsmicro@10.10.131.66:8761/eureka/
+    register-with-eureka: false
+turbine:
+  #  1.被监控的服务应用没有配置 context-path 的情况下
+  # 配置 Eureka 中的 serviceId 列表，指定要监控的服务
+  #  app-config: zjs-personnel-remote,sign-service,take-goods
+  # 指定集群名称
+  cluster-name-expression: "'default'"
