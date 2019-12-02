@@ -1,0 +1,5 @@
+#turbine:
+#  #  1.被监控的服务应用没有配置 context-path 的情况下
+#  # 配置 Eureka 中的 serviceId 列表，指定要监控的服务
+#  #  app-config: zjs-personnel-remote,sign-service,take-goods
+#  app-config: sign-service
